@@ -1,0 +1,6 @@
+{{ if ne .chezmoi.hostname "nero"}}
+sxhkdrc_nero
+{{ end}}
+{{ if ne .chezmoi.hostname "arch-vm" }}
+sxhkdrc_arch-vm
+{{ end }}

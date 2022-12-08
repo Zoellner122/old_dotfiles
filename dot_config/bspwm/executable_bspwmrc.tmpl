@@ -2,9 +2,13 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+
+{{ if eq .chezmoi.hostname "nero" }}
 bspc monitor DP-0 -d 1 2 3 4 5
 bspc monitor HDMI-0 -d 6 7 8 9 10
-#bspc monitor -d I II III IV V VI VII VIII XI X
+{{ else if eq .chezmoi.hostname "arch-vm" }}
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+{{ end }}
 
 bspc config border_width         4
 bspc config window_gap          6
@@ -36,7 +40,7 @@ bspc config active_border_color         "#00274E"
 #
 # Set display from arandr saved script
 
-
+{{ if eq .chezmoi.hostname "nero" }}
 bash ~/.config/bspwm/scripts/check_applets.sh &
 sh ~/.screenlayout/monitor.sh &
 # Bar
@@ -55,5 +59,24 @@ picom -b &
 nm-applet &
 flameshot &
 solaar -w hide &
+{{ else if eq .chezmoi.hostname "arch-vm" }}
+bash ~/.config/bspwm/scripts/check_applets.sh &
+# Launch polybar
+~/.config/polybar/launch.sh &
+# Launcing PolKit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Wallpaper
+nitrogen --restore &
+# Dex
+dex -a -s ~/.config/autostart/ &
+# Picom
+picom -b &
+#misc
+nm-applet &
+flameshot
+
+{{ end }}
+
+
 
 xsetroot -cursor_name left_ptr &
