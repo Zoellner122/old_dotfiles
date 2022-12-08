@@ -151,7 +151,11 @@ label-maxlen = 50
 ; Available tokens:
 ;   None
 
+{{ if eq .chezmoi.hostname "nero"}}
+label-empty = %{T1}nero%{T-}
+{{ else if eq .chezmoi.hostname "arch-vm"}}
 label-empty = %{T1}Arch-VM%{T-}
+{{end}}
 
 label-empty-foreground = #707880
 
