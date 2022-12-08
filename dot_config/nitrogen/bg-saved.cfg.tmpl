@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.hostname "nero"}}
+[xin_0]
+file=/home/rick/.local/share/chezmoi/dot_config/wallpapers/starry-night-at-the-lake.png
+mode=4
+bgcolor=#000000
+
+[xin_1]
+file=/home/rick/.local/share/chezmoi/dot_config/wallpapers/starry-night-at-the-lake.png
+mode=4
+bgcolor=#000000
+{{ else if eq .chezmoi.hostname "arch-vm"}}
+[Virtual1]
+file=/home/rick/.local/share/chezmoi/dot_config/wallpapers/starry-night-at-the-lake.png
+mode=4
+bgcolor=#000000
+{{ end }}

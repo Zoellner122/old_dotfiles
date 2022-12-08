@@ -44,7 +44,7 @@ bspc config active_border_color         "#00274E"
 bash ~/.config/bspwm/scripts/check_applets.sh &
 sh ~/.screenlayout/monitor.sh &
 # Bar
-~/.config/polybar/launch.sh &
+~/.config/polybar/launch &
 # Notifications
 /usr/bin/dunst &
 # Polkit
@@ -61,8 +61,9 @@ flameshot &
 solaar -w hide &
 {{ else if eq .chezmoi.hostname "arch-vm" }}
 bash ~/.config/bspwm/scripts/check_applets.sh &
+sh ~/.screenlayout/monitor.sh &
 # Launch polybar
-~/.config/polybar/launch.sh &
+~/.config/polybar/launch &
 # Launcing PolKit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
@@ -76,7 +77,4 @@ nm-applet &
 flameshot
 
 {{ end }}
-
-
-
 xsetroot -cursor_name left_ptr &

@@ -8,10 +8,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
 
-polybar arch_button -c ~/.config/polybar/config_new.ini &
-polybar workspaces -c ~/.config/polybar/config_new.ini &
-polybar window_name -c ~/.config/polybar/config_new.ini &
-polybar media -c ~/.config/polybar/config_new.ini &
+polybar arch_button -c ~/.config/polybar/config.ini &
+polybar workspaces -c ~/.config/polybar/config.ini &
+polybar window_name -c ~/.config/polybar/config.ini &
+polybar media -c ~/.config/polybar/config.ini &
 
 {{ if eq .chezmoi.hostname "nero"}}
 polybar bar_second -c ~/.config/polybar/config.ini &
