@@ -25,16 +25,15 @@ label-monitor = %name%
 
 label-dimmed-foreground = #555
 label-dimmed-underline = #FFC07CDA
-label-dimmed-focused-background = #5582B0F7
-label-dimmed-focused-foreground = #FF222222
+#label-dimmed-focused-background = #5582B0F7
+label-dimmed-focused-foreground = #FFC07CDA
 
 label-focused-foreground = #FF222222
 label-focused-background = #FF82B0F7
 label-focused-underline = #fba922
 
 label-occupied-foreground = #FF82B0F7
-
-label-urgent-background = #FFf78f82
+label-urgent-foreground = #FFFF5147
 
 label-empty-foreground = #FF4149A0
 
@@ -267,6 +266,12 @@ click-left = xfce4-terminal -e "less /home/$USER/.config/bspwm/keybindings"
 content-foreground = ${colors.blue-darker}
 content-padding = 1
 margin-right = 0
+
+[module/checkupdates]
+type = custom/script
+exec = ~/.config/polybar/scripts/checkupdates.sh
+interval = 1800
+click-left = ~/.config/polybar/scripts/checkupdates.sh
 
 
 [module/pacman]

@@ -1,10 +1,17 @@
 #!/bin/bash
 
-count=$(checkupdates | wc -l)
+check_updates() {
+    pacman_aur="$(checkupdates | wc -l)"
+    total=$pacman_aur
+}
 
-if [ count == 0 ]
-  then 
-    echo "%{T1} %{T-} %{T2}Up-2-date!"
-else
-    echo "%{T1} %{T-} %{T2}$count%{T-}"
-fi
+msg_control() {
+    if [ $total == 0 ]; then
+        echo "%{T1} %{T-}"
+    elif [ $total != 0 ]; then
+        echo "%{T1} $total %{T-}"
+    fi
+}
+
+check_updates
+msg_control

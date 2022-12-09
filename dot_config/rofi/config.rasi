@@ -4,17 +4,18 @@
  *******************************************************/
 
 configuration {
-    font:				"JetBrainsMono Nerd Font 11";
+    font:				    "JetBrainsMono Nerd Font 11";
     show-icons:				true;
     icon-theme:				"Reversal-blue";
     display-drun:			"Apps";
-    drun-display-format:		"{name}";
+    drun-display-format:	"{name}";
     scroll-method:			0;
-    disable-history:			false;
+    disable-history:		false;
     sidebar-mode:			false;
 }
 
-@import "~/.config/rofi/arc_dark_transparent_colors.rasi"
+// @import "~/.config/rofi/arc_dark_transparent_colors.rasi"
+@import "~/.config/rofi/rick_lofi.rasi"
 
 window {
     background-color: @background;
@@ -22,8 +23,8 @@ window {
     padding:          30;
 }
 listview {
-    lines:                          10;
-    columns:                        3;
+    lines:                          5;
+    columns:                        2;
 }
 mainbox {
     border:  0;
