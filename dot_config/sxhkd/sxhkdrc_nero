@@ -158,18 +158,14 @@ XF86AudioMute
 
 #Invoking the music_control helper
 XF86AudioPrev
-	~/.config/sxkhd/helpers/music_control prev
+	~/.config/sxhkd/helpers/music_control prev
+
 XF86AudioNext
-	~/.config/sxkhd/helpers/music_control next
+	~/.config/sxhkd/helpers/music_control next
 
-super + ctrl + a + XF86AudioPlay
-	~/.config/sxkhd/helpers/music_control toggle cider
-super + ctrl + c + XF86AudioPlay
-	~/.config/sxkhd/helpers/music_control toggle chromium
-super + ctrl + s + XF86AudioPlay
-	~/.config/sxkhd/helpers/music_control toggle spotify
+#XF86AudioPlay + {a,c,s}
+#	~/.config/sxhkd/helpers/music_control toggle {"cider", "chromium", "spotify"}
 
-  
 # amixer -q set Master toggle
 # Simple amixer command seems to have problems unmuting device
 
