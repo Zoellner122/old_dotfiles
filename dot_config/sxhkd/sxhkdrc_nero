@@ -161,11 +161,12 @@ XF86AudioPrev
 	~/.config/sxkhd/helpers/music_control prev
 XF86AudioNext
 	~/.config/sxkhd/helpers/music_control next
-super + a + XF86AudioPlay
+
+super + ctrl + a + XF86AudioPlay
 	~/.config/sxkhd/helpers/music_control toggle cider
-super + c + XF86AudioPlay
+super + ctrl + c + XF86AudioPlay
 	~/.config/sxkhd/helpers/music_control toggle chromium
-super + s + XF86AudioPlay
+super + ctrl + s + XF86AudioPlay
 	~/.config/sxkhd/helpers/music_control toggle spotify
 
   
