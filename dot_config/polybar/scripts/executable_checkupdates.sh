@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check_updates() {
-    pacman_aur="$(checkupdates | wc -l)"
+    pacman_aur="$(checkupdates+aur | wc -l)"
     total=$pacman_aur
 }
 
