@@ -1,16 +1,19 @@
 now_playing() {
-    spotify=$(playerctl -p spotify status)
-    cider=$(playerctl -p cider status)
-    if [ $spotify == "Playing" ]
+    cmd="$(playerctl status -a --format '{{ playerName }}:{{ status }}' | grep Playing)"
+    player="$(echo $cmd | cut -d ":" -f 1)"
+
+    metadata="$(playerctl -p $player metadata --format "{{title}} - {{ artist }}" | sed 's/\(.\{25\}\).*/\1.../')"
+    if [ $player == "spotify" ]
         then
-            now_playing=$(playerctl -p spotify metadata --format "{{ title }} - {{ artist }}" | sed 's/\(.\{25\}\).*/\1.../')
-            echo "%{F#1db954}%{T1}阮 %{T-}%{F-} %{T1}$now_playing%{T-}"
-    elif [ $cider == "Playing" ] 
+            echo "%{F#1db954}%{T1}阮 %{T-}%{F-} %{T1}$metadata%{T-}"
+    elif [ $player == "cider" ]
         then
-            now_playing=$(playerctl -p cider metadata --format "{{ title }} - {{ artist }}" | sed 's/\(.\{25\}\).*/\1.../')
-            echo "%{T1}%{F#fc3c44}%{T-}%{F-} %{T1}$now_playing%{T-}"
+            echo "%{T1}%{F#fc3c44}%{T-}%{F-} %{T1}$metadata%{T-}"
+    elif [ $player == "chromium" ]
+        then
+            echo "%{T1} %{T-}%{T1}$metadata%{T-}"
     else
-        echo "%{T1} Nothing is playing%{T-}"
+            echo "%{T1} Nothing is playing%{T-}"
     fi
 }
 
