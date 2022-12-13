@@ -78,7 +78,7 @@ element.selected.active {
     background-color: @selected-active-background;
     text-color:       @selected-active-foreground;
 }
-element.alternate.normal {
+/* element.alternate.normal {
     background-color: @alternate-normal-background;
     text-color:       @alternate-normal-foreground;
 }
@@ -89,7 +89,7 @@ element.alternate.urgent {
 element.alternate.active {
     background-color: @alternate-active-background;
     text-color:       @alternate-active-foreground;
-}
+}*/
 scrollbar {
     width:        4px ;
     border:       0;

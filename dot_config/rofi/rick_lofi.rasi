@@ -24,7 +24,7 @@ My custom color scheme
 
    //background:                         rgba (12, 51, 78, 80%);
    selected-normal-foreground:         rgba (130, 176, 247, 90%);
-   foreground:                         rgba (23, 43, 56, 100%);
+   //foreground:                         rgba (23, 43, 56, 100%);
    normal-background:                  @background;
    normal-foreground:                  @foreground;
    spacing:                            2;
