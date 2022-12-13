@@ -8,10 +8,11 @@ super + Return
 
 # program launcher
 super + d
-	# rofi -modi drun -show drun -line-padding 4 \
+	rofi -config ~/.config/rofi/rick_rofi.rasi -show drun
+	  # rofi -modi drun -show drun -line-padding 4 \
       #          -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
       #          -show-icons -drun-icon-theme "Qogir-dark" -font "CaskaydiaCove Nerd Font 10"
-	rofi -config ~/.config/rofi/rick_rofi.rasi -show drun 
+	 
 
 super + l
 	betterlockscreen -l dimblur --display 1
