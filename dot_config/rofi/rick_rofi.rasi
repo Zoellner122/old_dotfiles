@@ -6,35 +6,58 @@ configuration {
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
-	    drun-display-format:        "{name}";
-	    window-format:              "{w} · {c} · {t}";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
 }
 
-* {
-   /* 
-      color definitions:
+*{
 
-      french_blue: #82B0F7 (130,176,247)
-      violet_blue: #4149A0 (65,73,160)
-      lavender: #C07CDA (192,124,218)
-      prussian_blue: #0C334E (12,51,78)
-      gunmetal: #172B38 (23,43,56)
-      eerie_black: #222222 (34,34,34)
-   */
+      base:         #1e1e2e;
+      mantle:       #181825;
+      crust:        #11111b;
+
+      text:         #cdd6f4;
+      subtext0:     #a6adc8;
+      subtext1:     #bac2de;
+
+      surface0:     #313244;
+      surface1:     #45475a;
+      surface2:     #585b70;
+      overlay0:     #6c7086;
+      overlay1:     #7f849c;
+      overlay2:     #9399b2;
+
+      blue:         #89b4fa;
+      lavender:     #b4befe;
+      sapphire:     #74c7ec;
+      sky:          #89dceb;
+      teal:         #94e2d5;
+      green:        #a6e3a1;
+      yellow:       #f9e2af;
+      peach:        #fab387;
+      maroon:       #eba0ac;
+      red:          #f38ba8;
+      mauve:        #cba6f7;
+      pink:         #f5c2e7;
+      flamingo:     #f2cdcd;
+      rosewater:    #f5e0dc;
+ 
 
    font:                               "JetBrains Mono Nerd Font 12";
-   background:                         #172B38;
-   background-alt:                     #222222;
-   foreground:                         #FFFFFF;
-   selected:                           #82B0F7;
-   active:                             #4149A0;
-   urgent:                             #FF5147;
+   background:                         @surface0;
+   background-alt:                     @surface1;
+   foreground:                         @text;
+   selected:                           @sky;
+   //active:                             #4149A0;
+   //urgent:                             #FF5147;
 
    //background:                         rgba (12, 51, 78, 80%);
-   selected-normal-foreground:         rgba (130, 176, 247, 90%);
+   //selected-normal-foreground:         rgba (130, 176, 247, 90%);
    //foreground:                         rgba (23, 43, 56, 100%);
-   normal-background:                  @background;
+   normal-background:                  @background;                    
    normal-foreground:                  @foreground;
+   alternate-normal-background:        @background-alt;
+   alternate-normal-foreground:        @foreground;
    spacing:                            2;
 }
 

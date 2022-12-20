@@ -3,7 +3,7 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 
-configuration {
+/*configuration {
     font:				    "JetBrainsMono Nerd Font 11";
     show-icons:				true;
     icon-theme:				"Reversal-blue";
@@ -12,6 +12,18 @@ configuration {
     scroll-method:			0;
     disable-history:		false;
     sidebar-mode:			false;
+}*/
+
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    icon-theme:				    "Reversal-blue";
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
 }
 
 // @import "~/.config/rofi/arc_dark_transparent_colors.rasi"
@@ -78,7 +90,7 @@ element.selected.active {
     background-color: @selected-active-background;
     text-color:       @selected-active-foreground;
 }
-/* element.alternate.normal {
+ element.alternate.normal {
     background-color: @alternate-normal-background;
     text-color:       @alternate-normal-foreground;
 }
@@ -89,7 +101,7 @@ element.alternate.urgent {
 element.alternate.active {
     background-color: @alternate-active-background;
     text-color:       @alternate-active-foreground;
-}*/
+}
 scrollbar {
     width:        4px ;
     border:       0;

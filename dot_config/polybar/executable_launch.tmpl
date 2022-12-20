@@ -19,5 +19,6 @@ polybar tray -c ~/.config/polybar/config.ini &
 {{ if eq .chezmoi.hostname "nero"}}
 polybar workspaces_second -c ~/.config/polybar/config.ini &
 polybar tray_second -c ~/.config/polybar/config.ini &
+polybar clock_second -c ~/.config/polybar/config.ini &
 {{ end }}
 

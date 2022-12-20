@@ -23,17 +23,17 @@ format-padding = 1
 label-monitor = %name%
 
 
-label-dimmed-foreground = #555
+label-dimmed-foreground = ${colors.surface2}
 label-dimmed-underline = #FFC07CDA
 #label-dimmed-focused-background = #5582B0F7
-label-dimmed-focused-foreground = #FFC07CDA
+label-dimmed-focused-foreground = ${colors.pink}
 
 label-focused-foreground = #FF222222
 label-focused-background = #FF82B0F7
 label-focused-underline = #fba922
 
-label-occupied-foreground = #FF82B0F7
-label-urgent-foreground = #FFFF5147
+label-occupied-foreground = ${colors.mauve}
+label-urgent-foreground = ${colors.red}
 
 label-empty-foreground = #FF4149A0
 
@@ -50,10 +50,10 @@ interval = 1.0
 
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %{T1}%{T-}%{T2} %d/%a%{T-}
+date = %{T1}%{T-}%{T1} %d/%a%{T-}
 
 ; Optional time format
-time = %{T2} %H:%M%{T-}
+time = %{T1} %H:%M%{T-}
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
@@ -156,7 +156,7 @@ label-empty = %{T1}nero%{T-}
 label-empty = %{T1}Arch-VM%{T-}
 {{end}}
 
-label-empty-foreground = #707880
+label-empty-foreground = ${colors.Subtext1}
 
 [module/pulseaudio]
 type = internal/pulseaudio

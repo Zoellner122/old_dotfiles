@@ -119,6 +119,9 @@ super + alt + {h,j,k,l}
 super + alt + {1-9}
 	bspc node -o 0.{1-9}
 
+alt + control + {1,2,3}
+  ~/.config/bspwm/config_scheme.sh {first_child,longest_side,spiral}
+
 # cancel the preselection for the focused node
 super + alt + space
 	bspc node -p cancel
