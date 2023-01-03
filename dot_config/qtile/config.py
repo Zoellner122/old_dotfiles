@@ -1,10 +1,21 @@
-from libqtile import bar, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile import bar, layout, hook
+from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
+import os, subprocess
 from libqtile.utils import guess_terminal
+from colors import MACCHIATO
+from qtile_extras import widget
+from qtile_extras.widget.decorations import RectDecoration
 
 mod = "mod4"
 terminal = guess_terminal()
+
+@hook.subscribe.startup_once
+def autostart():
+    autorun = os.path.expanduser('~/.config/qtile/scripts/autorun.sh')
+    subprocess.Popen([autorun])    
+
+
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -45,6 +56,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "space", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "f", lazy.window.toggle_floating(), desc="Tell a window to stop floating"),
+    Key([mod], "l", lazy.spawn("betterlockscreen -l dimblur --display 1"), desc="Lock Nero")
 ]
 
 groups = [Group(i) for i in "1234567890"]
@@ -74,23 +87,25 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#0080FF", "##004080"], border_width=4),
+    #layout.Spiral(border_normal=MACCHIATO["surface1"], border_focus=MACCHIATO["sky"],margin=2),
+    layout.Bsp(border_normal=MACCHIATO["surface1"], border_focus=MACCHIATO["sky"],border_width=4, margin=5),
+    #layout.Columns(border_focus_stack=["#0080FF", "##004080"], border_width=4),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    layout.Bsp(border_focus_stack=["#0080FF", "##004080"], border_width=4),
-    layout.Matrix(border_focus_stack=["#0080FF", "##004080"], border_width=4),
+    
+    #layout.Matrix(border_focus_stack=["#0080FF", "##004080"], border_width=4),
     # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
-    layout.Tile(border_focus_stack=["#0080FF", "##004080"], border_width=4),
+    #layout.Tile(border_focus_stack=["#0080FF", "##004080"], border_width=4),
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
-    font="JetbrainsMono Nerd Font Complete",
+    font="JetbrainsMono Nerd Font Mono",
     fontsize=12,
     padding=3,
 )

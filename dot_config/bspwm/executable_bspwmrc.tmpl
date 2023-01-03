@@ -4,8 +4,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 
 {{ if eq .chezmoi.hostname "nero" }}
-bspc monitor DP-0 -d 1 2 3 4 5
-bspc monitor HDMI-0 -d 6 7 8 9 10
+bspc monitor HDMI-0 -d 1 2 3 4 5
+bspc monitor DP-2 -d 6 7 8 9 10
 {{ else if eq .chezmoi.hostname "arch-vm" }}
 bspc monitor -d 1 2 3 4 5
 {{ end }}
@@ -28,8 +28,8 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Yad state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a Steam state=floating
 bspc rule -a virt-manager manage=off
+bspc rule -a leagueclientux.exe manage=off
 
 
 
@@ -62,6 +62,8 @@ picom -b &
 nm-applet &
 flameshot &
 solaar -w hide &
+discord &
+steam-runtime &
 {{ else if eq .chezmoi.hostname "arch-vm" }}
 bash ~/.config/bspwm/scripts/check_applets.sh &
 sh ~/.screenlayout/monitor.sh &
@@ -78,8 +80,6 @@ picom -b &
 #misc
 nm-applet &
 flameshot &
-discord &
-steam-runtime &
 
 {{ end }}
 xsetroot -cursor_name left_ptr &
