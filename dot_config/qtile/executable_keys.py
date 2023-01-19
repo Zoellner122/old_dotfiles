@@ -5,6 +5,7 @@ from libqtile.lazy import lazy
 
 mod='mod1'
 alt='mod4'
+ctrl='control'
 home = os.path.expanduser('~'),
 myTerm = "alacritty",
 myIDE = "vscodium",
@@ -27,7 +28,12 @@ keys = [
 
     # Media Control
         # To-Do: Implement PlayerCTL helper
-    Key([],"XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5")),
-    Key([],"XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5")),
-    Key([],"XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle")),
+    Key([],"XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5"), desc="Increase the volume by 5"),
+    Key([],"XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5"), desc="Decrease the volume by 5"),
+    Key([],"XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle"), desc="Mute the default sink"),
+
+    #Alternate Media Control for when no XF86-compat mediakeys are present
+    Key([ctrl,alt], "u", lazy.spawn("pactl set-sink-volume 0 +5"), desc="Increase the volume by 5"),
+    Key([ctrl,alt], "j", lazy.spawn("pactl set-sink-volume 0 -5"), desc="Decrease the volume by 5"),
+    Key([ctrl,alt], "m", lazy.spawm("pactl set-sink-mute 0 toggle", desc="Mute the default sink")),
 ]
