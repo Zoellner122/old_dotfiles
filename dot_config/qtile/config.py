@@ -15,8 +15,6 @@ def autostart():
     autorun = os.path.expanduser('~/.config/qtile/scripts/autorun.sh')
     subprocess.Popen([autorun])    
 
-
-
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html

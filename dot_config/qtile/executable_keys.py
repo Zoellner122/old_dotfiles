@@ -30,4 +30,9 @@ keys = [
     Key([],"XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5")),
     Key([],"XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5")),
     Key([],"XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle")),
+    KeyChord([mod], "v", [
+        Key([], "up", lazy.spawn("pactl set-sink-volume 0 +5")),
+        Key([], "down", lazy.spawn("pactl set-sink-volume 0 -5")),
+        Key([], "m", lazy.spawn("pactl set-sink-mute 0 toggle")),
+    ]),
 ]

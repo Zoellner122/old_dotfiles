@@ -12,6 +12,9 @@ now_playing() {
     elif [ $player == "chromium" ]
         then
             echo "%{T1} %{T-}%{T1}$metadata%{T-}"
+    elif [ $player == "vlc"]
+        then
+            echo "%{T1}嗢 %{T-}%{T1}$metadata%{T-}"
     else
             echo "%{T1} Nothing is playing%{T-}"
     fi

@@ -168,6 +168,13 @@ XF86AudioPrev
 XF86AudioNext
 	~/.config/sxhkd/helpers/music_control next
 
+#volume control for non-media dial boards
+super + alt + Up
+	pactl set-sink-volume 0 +5%
+
+super + alt + Down 
+	pactl set-sink-volume 0 -5%
+
 #XF86AudioPlay + {a,c,s}
 #	~/.config/sxhkd/helpers/music_control toggle {"cider", "chromium", "spotify"}
 
