@@ -7,7 +7,7 @@ super + Return
 	alacritty
 
 # program launcher
-super + d
+super + space
 	rofi -config ~/.config/rofi/rick_rofi.rasi -show drun
 	  # rofi -modi drun -show drun -line-padding 4 \
       #          -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
@@ -18,7 +18,7 @@ super + l
 	betterlockscreen -l dimblur --display 1
 
 # show open window
-super + alt + d
+super + alt + space
 	rofi -modi drun -show window -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
                 -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
