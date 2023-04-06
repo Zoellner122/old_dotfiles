@@ -150,10 +150,10 @@ label-maxlen = 50
 ; Available tokens:
 ;   None
 
-{{ if eq .chezmoi.hostname "nero"}}
-label-empty = %{T1}nero%{T-}
-{{ else if eq .chezmoi.hostname "arch-vm"}}
-label-empty = %{T1}Arch-VM%{T-}
+{{ if eq .chezmoi.hostname "tempest"}}
+label-empty = %{T1}tempest%{T-}
+{{ else if eq .chezmoi.hostname "normandy"}}
+label-empty = %{T1}normandy%{T-}
 {{end}}
 
 label-empty-foreground = ${colors.Subtext1}
@@ -279,3 +279,16 @@ type = custom/script
 exec = checkupdates | wc -l
 format-prefix = " "
 format-foreground = ${colors.blue}
+
+{{ if eq .chezmoi.hostname "normandy" }}
+[module/battery]
+type = internal/battery
+
+full-at = 99
+low-at = 5
+battery = BAT0
+adapter = AC
+
+
+
+{{ end }}

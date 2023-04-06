@@ -12,11 +12,11 @@ polybar arch_button -c ~/.config/polybar/config.ini &
 polybar workspaces -c ~/.config/polybar/config.ini &
 polybar window_name -c ~/.config/polybar/config.ini &
 polybar media -c ~/.config/polybar/config.ini &
-{{ if ne .chezmoi.hostname "nero"}}
+{{ if ne .chezmoi.hostname "tempest"}}
 polybar tray -c ~/.config/polybar/config.ini &
 {{end}}
 
-{{ if eq .chezmoi.hostname "nero"}}
+{{ if eq .chezmoi.hostname "tempest"}}
 polybar workspaces_second -c ~/.config/polybar/config.ini &
 polybar tray_second -c ~/.config/polybar/config.ini &
 polybar clock_second -c ~/.config/polybar/config.ini &
